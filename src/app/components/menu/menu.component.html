@@ -1,0 +1,24 @@
+
+
+<ion-list (click)="cerrar()">
+
+  <ion-list-header>
+    <strong>Menú</strong>
+  </ion-list-header>
+
+  <ion-item detail="true" [routerLink]="['/home']" >
+        <ion-label>
+          Home
+        </ion-label>
+        <ion-icon slot="start" name="home"></ion-icon>
+  </ion-item>
+  
+  <ion-item detail="true" [routerLink]="['/resultados']" >
+    <ion-label>
+      Resultados
+    </ion-label>
+    <ion-icon slot="start" name="apps"></ion-icon>
+  </ion-item>
+  
+  
+</ion-list>
