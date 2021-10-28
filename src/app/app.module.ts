@@ -11,6 +11,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { ResultadosComponent } from './pages/resultados/resultados.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { ResultadoComponent } from './components/resultado/resultado.component';
+import { LoginComponent } from './pages/login/login.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { ResultadoComponent } from './components/resultado/resultado.component';
     HomeComponent,
     ResultadosComponent,
     MenuComponent,
-    ResultadoComponent
+    ResultadoComponent,
+    LoginComponent
   ],
   entryComponents: [],
   imports: [

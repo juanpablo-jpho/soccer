@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
+import { LoginComponent } from './pages/login/login.component';
 import { ResultadosComponent } from './pages/resultados/resultados.component';
 
 
@@ -8,6 +9,7 @@ const routes: Routes = [
 
   { path: 'home', component: HomeComponent},
   { path: 'resultados', component: ResultadosComponent},
+  { path: 'login', component: LoginComponent},
   { path: '', redirectTo: 'home', pathMatch: 'full' },
 
 
