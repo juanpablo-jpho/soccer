@@ -14,7 +14,7 @@ export class HomeComponent implements OnInit {
   ngOnInit() {}
 
   async openMenu(ev: any) {
-    console.log('abrir menu');    
+    console.log('abrir menu lateral');    
     const menu = await this.popoverController.create({
       component: MenuComponent,
       cssClass: 'my-custom-class',
