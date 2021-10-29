@@ -10,5 +10,9 @@ export class ResultadosComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {}
+  
+  getReultados() {
+    console.log('estos son los resultados')
+  }
 
 }
