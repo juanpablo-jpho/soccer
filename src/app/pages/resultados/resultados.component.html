@@ -4,7 +4,7 @@
   <ion-toolbar>
 
     <ion-title>
-     Resultados 
+     {{estudiantes}}
     </ion-title>
 
     <ion-buttons slot="end">
@@ -26,7 +26,11 @@
 
 <ion-content>
 
-
+  <div *ngFor="let estudiante of estudiantes">
+    <h1>Nombre: {{estudiante.nombre}}</h1>
+    <h3>apellido: {{estudiante.apellido}}</h3>
+    <p>edad: {{estudiante.edad}}</p>
+  </div>
 
 
 </ion-content>

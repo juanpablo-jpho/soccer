@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
 import { MenuComponent } from 'src/app/components/menu/menu.component';
+import { FirestoreService } from 'src/app/services/firestore.service';
 
 @Component({
   selector: 'app-home',
@@ -9,7 +10,8 @@ import { MenuComponent } from 'src/app/components/menu/menu.component';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(public popoverController: PopoverController) { }
+  constructor(public popoverController: PopoverController,
+              private firestore: FirestoreService) { }
 
   ngOnInit() {}
 
@@ -22,6 +24,11 @@ export class HomeComponent implements OnInit {
       event: ev,
     });
     await menu.present();
+  }
+
+
+  getEstudiantes() {
+     this.firestore.getCollection();
   }
 
 }

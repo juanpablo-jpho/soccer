@@ -8,6 +8,8 @@ import { LoadingController, ToastController } from '@ionic/angular';
 })
 export class LoginComponent implements OnInit {
 
+  
+
   constructor(public toastController: ToastController,
               public loadingController: LoadingController) { }
 
