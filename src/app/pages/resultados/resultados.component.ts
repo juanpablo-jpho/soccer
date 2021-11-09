@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Estudiante } from 'src/app/models/models';
+import { Estudiante, Resultado, ResultadoI } from 'src/app/models/models';
 
 @Component({
   selector: 'app-resultados',
@@ -8,53 +8,69 @@ import { Estudiante } from 'src/app/models/models';
 })
 export class ResultadosComponent implements OnInit {
 
-  resultado: number = 0;
-  mensaje: string = "hola";
-  enable: boolean = false;
 
-  resultados: number[] = [0, 4, 9, 9];
+  mensaje: string = 'hola estamos en resultados';
+  enable: boolean = true;
+  sexo: 'Masculino' | 'Femenino' = 'Masculino';
 
-  julio: Estudiante = {
-    nombre: 'julio',
-    apellido: 'Mendoza',
-    edad: 10,
-    sexo: 'M',
-    cedula: '0100102032',
+
+  amigo: Amigo = {
+    nombre: 'juan',
+    talla: 'M',
+    numero: 10,
+    edad: 25,
+    cedula: '01046390292'
   }
 
-  estudiantes: Estudiante[] = [
+
+  partidos: ResultadoI[] = [
     {
-      nombre: 'julio',
-      apellido: 'Mendoza',
-      edad: 10,
-      sexo: 'M',
-      cedula: '0100102032',
+        equipo1: {
+          nombre: 'Ecuador',
+          goles: 4,
+        },
+        equipo2: {
+          nombre: ' Venezuela',
+          goles: 0
+        },
+        arbitro: 'MAX' 
     },
     {
-      nombre: 'katty',
-      apellido: 'Mendoza',
-      edad: 19,
-      sexo: 'M',
-      cedula: '0100102032',
-    },
+      equipo1: {
+        nombre: 'Uruguay',
+        goles: 0,
+      },
+      equipo2: {
+        nombre: 'Argentina',
+        goles: 2
+      },
+      arbitro: 'MAX' 
+  },
+  
     {
-      nombre: 'diana',
-      apellido: 'Mendoza',
-      edad: 31,
-      sexo: 'M',
-      cedula: '0100102032',
+      equipo1: {
+        nombre: 'Brasil',
+        goles: 4,
+      },
+      equipo2: {
+        nombre: 'Colombia',
+        goles: 0
+      }
     }
+
   ]
 
+
+
+  resultado: number = 0;
+  resultados: number[] = [0, 4, 9, 9];
+
+  mensajes: string[] = ['hola', 'adios'];
 
   constructor() {
       console.log("HOLA ESTOY EN EL CONTRUCTOR");
       this.getResultados();
 
-      this.estudiantes.forEach( estudiante => {
-           console.log('la edad es -> ', estudiante.edad);
-      } )
-      
       
   }
 
@@ -63,10 +79,21 @@ export class ResultadosComponent implements OnInit {
   }
   
   getResultados() {
-    console.log('estos son los resultados ->', this.estudiantes);
+
 
   }
 
 }
+
+
+interface Amigo {
+  nombre: string;
+  talla: 'S' | 'M' | 'L';
+  numero: number;
+  edad: number;
+  cedula: string;
+}
+
+
 
 

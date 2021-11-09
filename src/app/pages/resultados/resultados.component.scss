@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Mochiy+Pop+One&display=swap');
+
+.titulo {
+    color:blue;
+    padding: 40px;
+}
+
+.foto-perfil {
+    width: 200px;
+    height: auto;
+    padding: 20px;
+    margin: auto;
+}
+
+.logo-whatsapp {
+    width: 50px;
+}
+
+.caja-resultados {
+    background-image: url("/assets/fondo-resultados.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.titulo-fecha {
+    color: white;
+    text-align: center;
+    margin: 0px;
+    font-family: 'Mochiy Pop One', sans-serif;
+}
+
+.caja-titulos {
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+.texto-fecha {
+    color: #e7ca65;
+    text-align: center;
+    font-family: 'Mochiy Pop One', sans-serif;
+    padding-bottom: 20px;
+    width: 200px;
+    margin: auto;
+}
+
+.linea {
+    border-bottom: 1px solid white;
+    width: 35px;
+    text-align: center;
+    margin: auto;
+}
+
+.bandera {
+    width: 50px;
+}
+
+.content-resultado {
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+    margin: auto;
+    align-items: center;
+    filter: opacity(0.8);
+    background: linear-gradient(90deg , rgb(60 54 150) 0%, rgba(9,9,121,1) 47%, rgba(0,212,255,1) 100%);
+    border-radius: 6px;
+    margin-top: 26px;
+    margin-bottom: 20px;
+}
+
+
+.nombre {
+    color: white;
+    font-family: 'Mochiy Pop One', sans-serif;
+    margin: 0px;
+}
+
+
+.resultado {
+    color: #e7ca65;
+    font-family: 'Mochiy Pop One', sans-serif;
+    font-size: 25px;
+    margin: 0px;
+}
+
+.separacion {
+    color: #e7ca65;
+    font-size: 31px;
+    margin: 0px;
+}
+

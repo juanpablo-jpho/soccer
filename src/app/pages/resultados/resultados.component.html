@@ -4,7 +4,7 @@
   <ion-toolbar>
 
     <ion-title>
-     {{estudiantes}}
+    Resultados
     </ion-title>
 
     <ion-buttons slot="end">
@@ -26,10 +26,35 @@
 
 <ion-content>
 
-  <div *ngFor="let estudiante of estudiantes">
-    <h1>Nombre: {{estudiante.nombre}}</h1>
-    <h3>apellido: {{estudiante.apellido}}</h3>
-    <p>edad: {{estudiante.edad}}</p>
+    <div class="caja-resultados">
+      <div class="caja-titulos">
+          <h2 class="titulo-fecha">RESULTADOS</h2>
+          <h1 class="titulo-fecha"> DE LA FECHA</h1>
+      </div>
+      <h4 class="texto-fecha">Fecha 13</h4>
+      <div class="linea"></div>
+
+      <div *ngFor="let partido of partidos"   class="content-resultado" >
+          <img class="bandera" src="assets/bandera-ecuador.PNG">
+          <h4 class="nombre">{{partido.equipo1.nombre}}</h4>
+          <h4 class="resultado">{{partido.equipo1.goles}}</h4>
+          <h4 class="separacion">-</h4>
+          <h4 class="resultado">{{partido.equipo2.goles}}</h4>
+          <h4 class="nombre">{{partido.equipo2.nombre}}</h4>
+          <img class="bandera" src="assets/bandera-colombia.png">
+      </div>
+
+      <div style="padding: 30px;"></div>
+
+
+
+
+
+
+
+
+
+
   </div>
 
 
