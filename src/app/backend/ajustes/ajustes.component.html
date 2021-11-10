@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Ajustes
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-card>
+        <ion-item>
+          <ion-label>Equipo 1: </ion-label>
+          <ion-input [(ngModel)]="data.equipo1.nombre"></ion-input>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Goles 1: </ion-label>
+          <ion-input [(ngModel)]="data.equipo1.goles"></ion-input>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Equipo 2: </ion-label>
+          <ion-input [(ngModel)]="data.equipo2.nombre"></ion-input>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Goles 2: </ion-label>
+          <ion-input  [(ngModel)]="data.equipo2.goles"></ion-input>
+        </ion-item>
+    
+    
+    
+    </ion-card>
+    
+    <ion-button (click)="crearNuevoResultado()">
+      crear
+    </ion-button>
+</ion-content>
+

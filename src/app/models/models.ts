@@ -31,4 +31,5 @@ export interface ResultadoI {
       goles: number
     } 
     arbitro?: string;
+    id: string;
 }

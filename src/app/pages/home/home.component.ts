@@ -28,7 +28,7 @@ export class HomeComponent implements OnInit {
 
 
   getEstudiantes() {
-     this.firestore.getCollection();
+
   }
 
 }

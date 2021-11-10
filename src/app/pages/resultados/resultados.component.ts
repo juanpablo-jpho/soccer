@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Estudiante, Resultado, ResultadoI } from 'src/app/models/models';
+import { FirestoreService } from 'src/app/services/firestore.service';
 
 @Component({
   selector: 'app-resultados',
@@ -8,78 +9,22 @@ import { Estudiante, Resultado, ResultadoI } from 'src/app/models/models';
 })
 export class ResultadosComponent implements OnInit {
 
-
-  mensaje: string = 'hola estamos en resultados';
-  enable: boolean = true;
-  sexo: 'Masculino' | 'Femenino' = 'Masculino';
+  resultados: ResultadoI[] = [];
 
 
-  amigo: Amigo = {
-    nombre: 'juan',
-    talla: 'M',
-    numero: 10,
-    edad: 25,
-    cedula: '01046390292'
-  }
-
-
-  partidos: ResultadoI[] = [
-    {
-        equipo1: {
-          nombre: 'Ecuador',
-          goles: 4,
-        },
-        equipo2: {
-          nombre: ' Venezuela',
-          goles: 0
-        },
-        arbitro: 'MAX' 
-    },
-    {
-      equipo1: {
-        nombre: 'Uruguay',
-        goles: 0,
-      },
-      equipo2: {
-        nombre: 'Argentina',
-        goles: 2
-      },
-      arbitro: 'MAX' 
-  },
-  
-    {
-      equipo1: {
-        nombre: 'Brasil',
-        goles: 4,
-      },
-      equipo2: {
-        nombre: 'Colombia',
-        goles: 0
-      }
-    }
-
-  ]
-
-
-
-  resultado: number = 0;
-  resultados: number[] = [0, 4, 9, 9];
-
-  mensajes: string[] = ['hola', 'adios'];
-
-  constructor() {
-      console.log("HOLA ESTOY EN EL CONTRUCTOR");
-      this.getResultados();
-
-      
+  constructor(private database: FirestoreService) {      
   }
 
   ngOnInit() {
-    console.log('HOLA YA SE CREO LA VISTA');
+    this.getResultados();
   }
   
   getResultados() {
 
+      this.database.getCollection<ResultadoI>('Resultados').subscribe( res => {
+          console.log('esta es la lectura', res);
+          this.resultados = res;
+      })
 
   }
 
