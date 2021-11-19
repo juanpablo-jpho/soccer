@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+      <ion-title>
+       Registro
+      </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-item>
+  <ion-label>Nombre</ion-label>
+  <ion-input [(ngModel)]="datos.nombre"></ion-input>
+</ion-item>
+
+  <ion-item>
+    <ion-label>Correo</ion-label>
+    <ion-input [(ngModel)]="datos.correo"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>edad</ion-label>
+    <ion-input type="number" [(ngModel)]="datos.edad"></ion-input>
+  </ion-item>
+  
+  <ion-item>
+    <ion-label>Contraseña</ion-label>
+    <ion-input type="password" [(ngModel)]="datos.password"></ion-input>
+  </ion-item>
+
+<ion-button (click)="registrar()">
+  Regastrarme
+</ion-button>
+
+
+<ion-button [routerLink]="['/login']" routerLinkActive="router-link-active" >
+  o login
+</ion-button>
+
+
+
+
+<ion-content>
+
+</ion-content>

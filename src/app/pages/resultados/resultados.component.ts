@@ -21,7 +21,8 @@ export class ResultadosComponent implements OnInit {
   
   getResultados() {
 
-      this.database.getCollection<ResultadoI>('Resultados').subscribe( res => {
+      const path = 'Resultados';
+      this.database.getCollection<ResultadoI>(path).subscribe( res => {
           console.log('esta es la lectura', res);
           this.resultados = res;
       })

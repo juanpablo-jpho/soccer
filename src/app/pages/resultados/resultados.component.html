@@ -34,15 +34,9 @@
     <h4 class="texto-fecha">Fecha 13</h4>
     <div class="linea"></div>
 
-    <div class="content-resultado" *ngFor="let resultado of resultados" >
-        <img class="bandera" src="assets/bandera-ecuador.PNG">
-        <h4 class="nombre">{{resultado.equipo1.nombre}}</h4>
-        <h4 class="resultado">{{resultado.equipo1.goles}}</h4>
-        <h4 class="separacion">-</h4>
-        <h4 class="resultado">{{resultado.equipo2.goles}}</h4>
-        <h4 class="nombre">{{resultado.equipo2.nombre}}</h4>
-        <img class="bandera" src="assets/bandera-colombia.png">
-    </div>
+<div  *ngFor="let casa of resultados">
+    <app-resultado [resultado]=casa ></app-resultado>
+</div>
 
 
 

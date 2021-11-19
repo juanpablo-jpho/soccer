@@ -1,14 +1,15 @@
 
 
-<ion-list (click)="cerrar()">
+<ion-list>
 
   <ion-list-header>
     <strong>Menú</strong>
   </ion-list-header>
 
-  <ion-item detail="true" [routerLink]="['/home']" >
+
+  <ion-item *ngIf="rol === 'admin' " detail="true" [routerLink]="['/home']" >
         <ion-label>
-          Home hola
+          Ajustes
         </ion-label>
         <ion-icon slot="start" name="home"></ion-icon>
   </ion-item>
@@ -20,12 +21,34 @@
     <ion-icon slot="start" name="apps"></ion-icon>
   </ion-item>
   
-    <ion-item detail="true" [routerLink]="['/resultados']" >
+  <ion-menu-toggle *ngIf="login == false">
+    <ion-item  detail="true" [routerLink]="['/login']" routerLinkActive="router-link-active" >
+      <ion-label>
+       Login
+      </ion-label>
+      <ion-icon slot="start" name="apps"></ion-icon>
+    </ion-item>
+
+  </ion-menu-toggle>
+
+  <ion-item *ngIf="login && rol == 'visitante' " detail="true">
     <ion-label>
-     Login
+    Perfil
     </ion-label>
     <ion-icon slot="start" name="apps"></ion-icon>
   </ion-item>
   
+
+<ion-menu-toggle *ngIf="login">
+
+  <ion-item detail="true" (click)="logout()">
+    <ion-label>
+     Logout
+    </ion-label>
+    <ion-icon slot="start" name="apps"></ion-icon>
+  </ion-item>
+
+</ion-menu-toggle>
   
+
 </ion-list>

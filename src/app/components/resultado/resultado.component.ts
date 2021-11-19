@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Resultado, ResultadoI } from 'src/app/models/models';
 
 @Component({
   selector: 'app-resultado',
@@ -7,8 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ResultadoComponent implements OnInit {
 
+  @Input() resultado: ResultadoI;
+
   constructor() { }
 
   ngOnInit() {}
+
+  add() {
+    console.log('añadir a favoriuta -> ', this.resultado);
+    
+  }
+
+
 
 }

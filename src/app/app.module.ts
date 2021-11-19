@@ -18,6 +18,7 @@ import { environment } from 'src/environments/environment';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AjustesComponent } from './backend/ajustes/ajustes.component';
+import { RegistroComponent } from './pages/registro/registro.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { AjustesComponent } from './backend/ajustes/ajustes.component';
     MenuComponent,
     ResultadoComponent,
     LoginComponent,
-    AjustesComponent
+    AjustesComponent,
+    RegistroComponent
   ],
   entryComponents: [],
   imports: [

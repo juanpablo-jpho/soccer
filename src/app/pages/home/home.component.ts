@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PopoverController } from '@ionic/angular';
 import { MenuComponent } from 'src/app/components/menu/menu.component';
-import { FirestoreService } from 'src/app/services/firestore.service';
+
 
 @Component({
   selector: 'app-home',
@@ -10,10 +10,13 @@ import { FirestoreService } from 'src/app/services/firestore.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(public popoverController: PopoverController,
-              private firestore: FirestoreService) { }
+  constructor(public popoverController: PopoverController) { 
 
-  ngOnInit() {}
+              }
+
+  ngOnInit() {
+
+  }
 
   async openMenu(ev: any) {
     console.log('abrir menu lateral');    
@@ -27,8 +30,10 @@ export class HomeComponent implements OnInit {
   }
 
 
-  getEstudiantes() {
 
-  }
+
+
+
+
 
 }

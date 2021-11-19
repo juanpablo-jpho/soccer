@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { LoadingController, ToastController } from '@ionic/angular';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
+import { InteractionService } from 'src/app/services/interaction.service';
 
 @Component({
   selector: 'app-login',
@@ -8,75 +10,35 @@ import { LoadingController, ToastController } from '@ionic/angular';
 })
 export class LoginComponent implements OnInit {
 
-  
 
-  constructor(public toastController: ToastController,
-              public loadingController: LoadingController) { }
+  credenciales = {
+    correo: null,
+    password: null
+  }
+
+
+  constructor(private auth: AuthService,
+              private interaction: InteractionService,
+              private router: Router) { }
 
   ngOnInit() {}
 
-  login() {
-    console.log('click en login');
-    this.presentLoading();
-
-    
+  async login() {
+    await this.interaction.presentLoading('ingresando...')
+    console.log('credenciales -> ', this.credenciales);
+    const res = await this.auth.login(this.credenciales.correo, this.credenciales.password).catch( error => {
+        console.log('error');
+        this.interaction.closeLoading();
+        this.interaction.presentToast('Usuario o contraseña invalido')
+    })
+    if (res) {
+        console.log('res -> ', res);
+        this.interaction.closeLoading();
+        this.interaction.presentToast('Ingresado con exito');
+        this.router.navigate(['/home'])
+    }
   }
 
-  async presentToast() {
-    const toast = await this.toastController.create({
-      message: 'tus cambios han sifo guardados',
-      duration: 5000
-    });
-
-    toast.present();
-  }
-
-  async presentToastWithOptions() {
-    const toast = await this.toastController.create({
-      header: 'Toast header',
-      message: 'Click to Close',
-      position: 'bottom',
-      buttons: [
-        {
-          side: 'start',
-          icon: 'star',
-          text: 'Favorite',
-          handler: () => {
-            console.log('Favorite clicked');
-          }
-        }, {
-          text: 'Done',
-          role: 'cancel',
-          handler: () => {
-            console.log('Cancel clicked');
-          }
-        }
-      ]
-    });
-    await toast.present();
-
-    const { role } = await toast.onDidDismiss();
-    console.log('onDidDismiss resolved with role', role);
-  }
-
-  async presentLoading() {
-    const loading = await this.loadingController.create({
-      cssClass: 'my-custom-class',
-      message: 'Ingresando...',
-      spinner: 'dots',
-
-    });
-    await loading.present();
-      setTimeout(() => {
-          loading.dismiss();
-          this.presentToast();
-      }, 5000);
-  }
-
-  registrase() {
-    console.log('esta es la funcion registrar');
-    
-  }
 
 
 
