@@ -1,0 +1,47 @@
+
+
+<ion-header>
+
+  <ion-toolbar>
+
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+
+    <ion-title>
+     Mi perfil
+    </ion-title>
+
+  </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+  
+  <ion-list *ngIf="info">
+    <ion-item>
+      <ion-label>
+        {{info.correo}}
+      </ion-label>
+      <ion-icon (click)="editAtributo('correo')" slot="end" name="create"></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        {{info.nombre}}
+      </ion-label>
+      <ion-icon (click)="editAtributo('nombre')" slot="end" name="create"></ion-icon>
+    </ion-item>
+    <ion-item>
+      <ion-label>
+        {{info.edad}}
+      </ion-label>
+      <ion-icon (click)="editAtributo('edad')" slot="end" name="create"></ion-icon>
+    </ion-item>
+  </ion-list>
+
+
+
+
+
+</ion-content>

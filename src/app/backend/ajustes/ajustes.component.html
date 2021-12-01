@@ -7,9 +7,16 @@
 </ion-header>
 
 <ion-content>
+
+    <ion-button (click)=" leerAjustesSecretos()">leer ajustes</ion-button>
+
+    <ion-item *ngFor="let clave of ajustes">
+      <ion-label>{{clave.claveSecreta}}</ion-label>
+    </ion-item>
+
     <ion-card>
         <ion-item>
-          <ion-label>Equipo 1: </ion-label>
+          <ion-label>Equipo 20: </ion-label>
           <ion-input [(ngModel)]="data.equipo1.nombre"></ion-input>
         </ion-item>
     

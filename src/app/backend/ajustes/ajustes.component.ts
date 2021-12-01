@@ -23,12 +23,21 @@ export class AjustesComponent implements OnInit {
     id: '',
   }
 
+  ajustes: any[] = [];
 
   constructor(private database: FirestoreService,
             private interaction: InteractionService) { }
 
   ngOnInit() {
     console.log('hola estamois en ajustes'); 
+  }
+
+  leerAjustesSecretos() {
+    const path = 'Ajustes';
+    this.database.getCollection(path).subscribe( (res) => {
+        console.log(' leerAjustesSecretos -> ', res);
+        this.ajustes = res;
+    });
   }
 
   crearNuevoResultado() {

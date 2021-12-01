@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { MenuController } from '@ionic/angular';
 import { AuthService } from 'src/app/services/auth.service';
 import { InteractionService } from 'src/app/services/interaction.service';
 
@@ -19,9 +20,17 @@ export class LoginComponent implements OnInit {
 
   constructor(private auth: AuthService,
               private interaction: InteractionService,
-              private router: Router) { }
+              private router: Router,
+              private menu: MenuController) {
+
+
+
+               }
 
   ngOnInit() {}
+
+
+
 
   async login() {
     await this.interaction.presentLoading('ingresando...')

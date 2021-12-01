@@ -6,13 +6,15 @@
     <strong>Menú</strong>
   </ion-list-header>
 
+  <ion-menu-toggle>
+    <ion-item *ngIf="rol === 'admin' " detail="true" [routerLink]="['/ajustes']" >
+          <ion-label>
+            Ajustes
+          </ion-label>
+          <ion-icon slot="start" name="home"></ion-icon>
+    </ion-item>
 
-  <ion-item *ngIf="rol === 'admin' " detail="true" [routerLink]="['/home']" >
-        <ion-label>
-          Ajustes
-        </ion-label>
-        <ion-icon slot="start" name="home"></ion-icon>
-  </ion-item>
+  </ion-menu-toggle>
   
   <ion-item detail="true" [routerLink]="['/resultados']" >
     <ion-label>
@@ -31,12 +33,15 @@
 
   </ion-menu-toggle>
 
-  <ion-item *ngIf="login && rol == 'visitante' " detail="true">
-    <ion-label>
-    Perfil
-    </ion-label>
-    <ion-icon slot="start" name="apps"></ion-icon>
-  </ion-item>
+  <ion-menu-toggle>
+    <ion-item *ngIf="login && rol == 'visitante' " detail="true"
+    [routerLink]="['/perfil']" routerLinkActive="router-link-active" >
+      <ion-label>
+      Perfil
+      </ion-label>
+      <ion-icon slot="start" name="person-circle"></ion-icon>  
+    </ion-item>
+  </ion-menu-toggle>
   
 
 <ion-menu-toggle *ngIf="login">
@@ -45,7 +50,7 @@
     <ion-label>
      Logout
     </ion-label>
-    <ion-icon slot="start" name="apps"></ion-icon>
+    <ion-icon slot="start" name="log-out"></ion-icon>
   </ion-item>
 
 </ion-menu-toggle>

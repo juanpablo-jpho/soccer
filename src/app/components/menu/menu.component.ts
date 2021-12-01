@@ -31,7 +31,7 @@ export class MenuComponent implements OnInit {
                          } else {
                            console.log('no está logeado');
                            this.login = false;
-                           this.router.navigate(['/login'])
+                         //  this.router.navigate(['/login'])
                            
                          }   
                     })
